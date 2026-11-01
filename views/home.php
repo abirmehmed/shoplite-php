@@ -10,6 +10,7 @@
 <div class="grid">
 <?php foreach ($products as $p): ?>
 <div class="card">
+<img src="public/images/<?= $p->image ?>" alt="<?= View::e($p->name) ?>" style="width:100%;height:180px;object-fit:contain;background:#fafafa;border-radius:3px;margin-bottom:12px">
 <h3><a href="index.php?page=product&id=<?= $p->id ?>"><?= View::e($p->name) ?></a></h3>
 <div class="cat"><?= View::e($p->category) ?></div>
 <div class="price">$<?= number_format($p->price,2) ?></div>

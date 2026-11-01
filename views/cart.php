@@ -8,7 +8,10 @@
 <?php foreach ($cart->items() as $id => $qty):
     $p = $repo->find($id); if (!$p) continue; ?>
 <tr>
-<td><?= View::e($p->name) ?></td>
+<td style="display:flex;align-items:center;gap:12px">
+<img src="public/images/<?= $p->image ?>" alt="<?= View::e($p->name) ?>" style="width:48px;height:48px;object-fit:contain;border:1px solid #e5e5e5;border-radius:3px">
+<?= View::e($p->name) ?>
+</td>
 <td><?= $qty ?></td>
 <td class="price">$<?= number_format($p->price*$qty,2) ?></td>
 <td><form method="post"><input type="hidden" name="action" value="remove"><input type="hidden" name="id" value="<?= $id ?>"><button class="btn btn-danger">Remove</button></form></td>

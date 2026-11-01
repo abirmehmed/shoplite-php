@@ -5,12 +5,14 @@ class Product {
     public string $description;
     public float $price;
     public string $category;
+    public string $image;
 
-    public function __construct(int $id, string $name, string $desc, float $price, string $category) {
+    public function __construct(int $id, string $name, string $desc, float $price, string $category, string $image) {
         $this->id = $id;
         $this->name = $name;
         $this->description = $desc;
         $this->price = $price;
         $this->category = $category;
+        $this->image = $image;
     }
 }
